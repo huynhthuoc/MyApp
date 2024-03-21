@@ -1,39 +1,79 @@
 @import "./variabels";
 .sidemenu {
-    width: 30rem;
-    height: 100vh;
+    width: 25rem;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    padding: 1rem;
+    background-image: $brColorItem;
+    height: 100%;
+    border-right: 5px solid $primaryColor;
     .logo {
-        display: flex;
-        align-items: center;
         user-select: none;
         height: 80px;
-        video {
-            height: 6rem;
-            width: 6rem;
+        display: flex;
+        gap: 2rem;
+
+        animation-duration: 1s;
+        i {
+            font-size: 6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: $brColorlgradient3;
         }
         h2 {
             font-size: 3rem;
             margin-left: 0.5rem;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: $brColorlgradient4;
         }
     }
+
     ul {
         width: 100%;
-        height: 100vh;
+        height: 100%;
         margin-top: 2rem;
+
         li {
+            user-select: none;
             width: 100%;
-            height: 5rem;
+            height: 4rem;
             display: flex;
             align-items: center;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.2rem;
+            animation-duration: 1s;
             &:hover {
                 p {
-                    transform: scale(1.2);
                     color: $primaryColor;
-                    font-weight: 700;
+                }
+                i {
+                    color: $primaryColor;
+                }
+            }
+            .active {
+                transform: translate(2px, 2px);
+                box-shadow: 0 0 0 transparent;
+                font-weight: 900;
+                border-bottom: 1px solid $primaryColor;
+                i {
+                    transition: 0.3s;
+                    font-size: 2rem;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-image: $brColorlgradient3;
+                }
+                p {
+                    transition: 0.3s;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-image: $brColorlgradient4;
                 }
             }
             a {
+                box-shadow: -5px 5px 7px black;
                 position: relative;
                 display: flex;
                 align-items: center;
@@ -42,26 +82,31 @@
                 width: 100%;
                 white-space: nowrap;
                 z-index: 1;
-                transition: all 0.5s;
-                video {
-                    width: 5rem;
-                    height: 5rem;
+                border-radius: 1rem;
+                height: 100%;
+                width: 100%;
+                border-bottom: 3px solid $primaryColor;
+                transition: all 0.2s;
+                i {
+                    font-size: 2.3rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: all 0.2s;
                 }
                 p {
                     font-size: 1.8rem;
-                    transition: all 0.5s;
+                    transition: all 0.2s;
                 }
             }
-            .active {
-                border: 1px solid $borderColor;
-                border-radius: 1.5rem;
-                box-shadow: 0 1px 2px black;
-                transition: none;
-                p {
-                    transform: scale(1.2);
-                    color: $primaryColor;
-                    font-weight: 700;
-                }
+        }
+        .settings-app {
+            margin-top: 100%;
+        }
+        .add-product {
+            a {
+                flex-direction: row-reverse;
+                justify-content: space-between;
             }
         }
     }

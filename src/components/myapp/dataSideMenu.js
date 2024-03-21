@@ -1,32 +1,34 @@
-//icons
-import app from "./videosIcons/app.mp4"
-import about from "./videosIcons/information.mp4"
-import past from "./videosIcons/past.mp4"
-import contact from "./videosIcons/phone-contact.mp4"
-
 export const dataSideMenu = [
     {
         id: 0,
-        icon: app,
-        title: "Project store",
-        path: "/home",
+        icon: "fi fi-rr-boxes",
+        title: "Products",
+        path: "/",
     },
     {
         id: 1,
-        icon: past,
+        icon: "fi fi-rr-time-past",
         title: "History",
         path: "/history",
     },
     {
         id: 2,
-        icon: about,
-        title: "About",
+        icon: "fi fi-rs-info",
+        title: "About Me",
         path: "/about",
     },
     {
         id: 3,
-        icon: contact,
-        title: "Contacts",
-        path: "/contacts",
+        icon: "fi fi-rr-settings",
+        title: "Settings",
+        path: "/settings",
+        className: "settings-app",
+    },
+    {
+        id: 4,
+        icon: "fi fi-br-plus",
+        title: "Product",
+        path: "/more/product",
+        className: "add-product",
     },
 ]

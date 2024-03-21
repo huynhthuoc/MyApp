@@ -1,7 +1,6 @@
 @import "./variabels";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import "~@flaticon/flaticon-uicons/css/all/all";
-
 html {
     font-size: 62.5%;
 }
@@ -36,10 +35,20 @@ li {
 .myapp {
     height: 100vh;
     width: 100%;
-    background-image: linear-gradient(45deg, #fff, black);
+    color: $textColor;
+    background-image: $brColorlgradient2;
+    padding: 3rem 3rem;
+
     .container {
-        padding: 3rem 2rem;
         display: flex;
+        height: 100%;
+        width: 100%;
         gap: 2rem;
+        backdrop-filter: blur(5rem);
+        border-radius: 2rem;
+        background-image: $brColorlgradient;
+        overflow: hidden;
+        overflow-y: hidden;
+        box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.459);
     }
 }

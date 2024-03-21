@@ -4,56 +4,38 @@ import { Link } from "react-router-dom"
 
 //style css
 import "./style/sideMenu.scss"
-import logo from "./videosIcons/logo.mp4"
 
 //initValue
 import { dataSideMenu } from "./dataSideMenu"
 const SideMenu = () => {
-    const [isActive, setIsActive] = React.useState(0)
-    const refIconIcon = React.useRef(null)
-    const refIconIconOld = React.useRef(null)
-
-    function handleClick(id) {
-        if (isActive !== id) {
-            setIsActive(id)
-            refIconIconOld.current = refIconIcon.current
-        }
-    }
-
-    React.useEffect(() => {
-        refIconIcon.current.play()
-        return () => {
-            if (refIconIconOld.current) {
-                refIconIconOld.current.pause()
-            }
-        }
-    }, [isActive])
-
+    const [path, setPath] = React.useState(window.location.pathname)
     return (
         <div className="sidemenu">
-            <div className="logo">
-                <video autoPlay muted loop src={logo}></video>
-                <h2>STORE</h2>
+            <div className="logo flex">
+                <i className="fi fi-brands-wepik"></i>
+                <h2>STORAGE</h2>
             </div>
 
             <ul>
-                {dataSideMenu.map((item) => (
-                    <li key={item.id}>
-                        <Link
-                            onClick={() => handleClick(item.id)}
-                            className={isActive === item.id ? "active" : ""}
-                            to={item.path}
+                {dataSideMenu.map((item) => {
+                    return (
+                        <li
+                            key={item.id}
+                            className={`${
+                                item.className && item.className
+                            } animate__lightSpeedInLeft`}
+                            onClick={() => setPath(window.location.pathname)}
                         >
-                            <video
-                                ref={isActive === item.id ? refIconIcon : null}
-                                muted
-                                loop
-                                src={item.icon}
-                            ></video>
-                            <p>{item.title}</p>
-                        </Link>
-                    </li>
-                ))}
+                            <Link
+                                className={path === item.path ? "active" : ""}
+                                to={item.path}
+                            >
+                                <i className={item.icon}></i>
+                                <p>{item.title}</p>
+                            </Link>
+                        </li>
+                    )
+                })}
             </ul>
         </div>
     )

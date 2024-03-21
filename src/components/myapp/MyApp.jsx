@@ -1,5 +1,7 @@
 import React from "react"
+import "animate.css"
 
+//components
 import SideMenu from "./SideMenu"
 import Main from "./Main"
 
