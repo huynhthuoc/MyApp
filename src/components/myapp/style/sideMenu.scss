@@ -1,4 +1,4 @@
-@import "./variabels";
+@import "../../../../src/style/variabels";
 .sidemenu {
     width: 25rem;
     border-top-left-radius: 2rem;
@@ -36,7 +36,6 @@
         width: 100%;
         height: 100%;
         margin-top: 2rem;
-
         li {
             user-select: none;
             width: 100%;

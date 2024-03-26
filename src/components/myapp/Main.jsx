@@ -17,7 +17,14 @@ const Main = () => {
                         ? "animate__fadeOutRight"
                         : ""
                 }`}
-                style={!isActive ? { opacity: 0 } : {}}
+                style={
+                    !isActive
+                        ? {
+                              opacity: 0,
+                              visibility: "hidden",
+                          }
+                        : {}
+                }
             >
                 <div className="layer-header">
                     <h3>Thông Báo</h3>

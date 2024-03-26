@@ -6,7 +6,7 @@ import SideMenu from "./SideMenu"
 import Main from "./Main"
 
 //style css
-import "./style/base.scss"
+import "../../style/base.scss"
 
 const MyApp = () => {
     return (
